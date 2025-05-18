@@ -158,7 +158,7 @@ const Dashboard = () => {
                         </p>
                       </div>
                       <div className="mt-2 md:mt-0">
-                        <Badge variant={getStatusBadgeVariant(referral.status) as "success" | "destructive" | "secondary"}>
+                        <Badge variant={getStatusBadgeVariant(referral.status) as "default" | "destructive" | "outline" | "secondary"}>
                           {referral.status.charAt(0).toUpperCase() + referral.status.slice(1)}
                         </Badge>
                       </div>
