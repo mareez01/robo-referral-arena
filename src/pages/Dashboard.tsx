@@ -52,9 +52,9 @@ const Dashboard = () => {
   
   const getStatusBadgeVariant = (status: string) => {
     switch(status) {
-      case 'approved': return 'success';
+      case 'approved': return 'secondary'; // Changed from 'success' to 'secondary'
       case 'rejected': return 'destructive';
-      default: return 'secondary';
+      default: return 'outline'; // Changed from 'secondary' to 'outline' for pending
     }
   };
   

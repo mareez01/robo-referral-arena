@@ -1,13 +1,9 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
-
-// Install framer-motion
-<lov-add-dependency>framer-motion@11.0.8</lov-add-dependency>
 
 const Index = () => {
   const { currentUser } = useAuth();

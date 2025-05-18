@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Trophy } from "lucide-react";
+import { QueryDocumentSnapshot, DocumentData } from "firebase/firestore";
 
 interface LeaderboardUser {
   uid: string;
@@ -32,7 +33,9 @@ const Scoreboard = () => {
         const querySnapshot = await getDocs(q);
         const leaderboardUsers: LeaderboardUser[] = [];
         
-        querySnapshot.forEach((doc, index) => {
+        // Fix the forEach callback signature
+        querySnapshot.forEach((doc: QueryDocumentSnapshot<DocumentData>) => {
+          const index = leaderboardUsers.length;
           const userData = doc.data() as LeaderboardUser;
           leaderboardUsers.push({
             ...userData,
