@@ -21,4 +21,7 @@ const firestore = getFirestore(app);
 const storage = getStorage(app);
 const googleProvider = new GoogleAuthProvider();
 
+// Enable Firebase Auth persistence
+auth.setPersistence({ type: 'LOCAL' });
+
 export { auth, firestore, storage, googleProvider };
